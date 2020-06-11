@@ -11,7 +11,7 @@ class Rooms extends Component {
             ],
             roomTitles: [
                 "Family", "Online School", "Friends",
-                 "Highschool Reunion", "incoming Call", "Prayer Group"
+                 "Highschool Reunion", "Incoming Call", "Prayer Group"
                 ],
             roomDescs: [
                 "Daily Call", "AGR 801", "Group Chat",
@@ -26,11 +26,9 @@ class Rooms extends Component {
 
         const {numOfRooms, roomTitles, roomDescs} = this.state;
         const rooms = numOfRooms;
-
-
-            rooms.slice(rooms.length)
-            roomTitles.slice(roomTitles.length)
-            roomDescs.slice(roomDescs.length)
+        rooms.slice(rooms.length)
+        roomTitles.slice(roomTitles.length)
+        roomDescs.slice(roomDescs.length)
 
             const displayedRooms = rooms.map((room) =>
             
@@ -45,13 +43,10 @@ class Rooms extends Component {
             )
 
         return ( 
-            <section className="page-section bg-light" id="rooms">
-                <div className="container">
-                    <div className="row">
-                        {displayedRooms}
-                    </div>
-                </div>
-            </section> 
+            <div id="rooms">
+                {displayedRooms}
+
+            </div> 
         );
     }
 }

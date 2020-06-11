@@ -6,11 +6,8 @@ class Footer extends Component {
     }
     render() { 
         return (
-            <footer 
-            className="bg-light" id="footer">
-                <div className="container">
-                    <span className="text-muted">Place Sticky footer content here.</span>
-                </div>
+            <footer id="footer">
+                <span >Place Sticky footer content here.</span>
             </footer>
         );
     }

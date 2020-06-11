@@ -1,0 +1,246 @@
+:root{
+    --logo-color: #fff;
+    --banner-color: #fff;
+    --banner-btn-bkgd-color: #d84780;
+    --room-icon-color: rgb(240, 240, 240);
+    --title-color: rgb(219, 219, 219);
+    --desc-color: rgb(173, 173, 173);
+    --member-title-color: rgb(230, 230, 230);
+    --member-desc-color: rgb(200, 200, 200);
+    --btn-hover: rgb(110, 219, 255);
+    --banner-btn-hover-bkgd-color: #f3659e;
+    --logo-size: 1.5rem;
+    --room-size: 1.1rem;
+    --room-title-size: 1.5rem;
+    --room-title-weight: 600;
+
+
+}
+
+#root{
+    background: url(../images/bg.jpg) no-repeat center top;
+    background-size: cover;
+    background-attachment: fixed;
+    -webkit-backface-visibility: hidden;
+    text-align: center;
+
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0F1116;
+    color: #fff;
+    padding: 1.25em;
+    z-index: 100;
+    -moz-transition: top 0.6s;
+    -webkit-transition: top 0.6s;
+    -o-transition: top 0.6s;
+    -ms-transition: top 0.6s;
+    transition: top 0.6s;
+}
+
+/* Logo */
+
+#logo {
+    cursor: default;
+    position: relative;
+    text-align: start;
+    left: 0;
+    top: 0; 
+}
+
+#logo h1 {
+    display: inline-block;
+}
+
+#logo h1 a{
+    -moz-transition: color 0.35s ease-in-out;
+    -webkit-transition: color 0.35s ease-in-out;
+    -o-transition: color 0.35s ease-in-out;
+    -ms-transition: color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out;
+    display: inline-block;
+    color: var(--logo-color);
+    font-size: var(--logo-size);
+    text-decoration: none;
+}
+
+#logo h1 a:hover{
+    color: var(--btn-hover);
+}
+
+/* Navigation */
+
+#nav {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    cursor: default;
+}
+
+#nav ul li {
+    display: inline-block;
+    padding: 1.25em 1.25em;
+}
+
+#nav ul li a {
+    -moz-transition: color 0.35s ease-in-out;
+    -webkit-transition: color 0.35s ease-in-out;
+    -o-transition: color 0.35s ease-in-out;
+    -ms-transition: color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out;
+    display: inline-block;
+    color: #ddd;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+}
+
+#nav ul li a:hover {
+    color: var(--btn-hover);
+}
+
+
+/* Banner Component */
+#banner{
+    margin-top: 96px;
+    padding: 5rem 1.5rem 1.5rem 1.5rem;
+    color: var(--banner-color);
+    line-height: 1.75em;
+    text-align: center;
+}
+
+.banner-btn{
+    margin-top: 1.75rem;
+}
+
+#banner p{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+#banner a{
+    color: inherit;
+    padding: 0.80rem 2rem;
+    background: var(--banner-btn-bkgd-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-radius: 6px;
+    display: inline-block;
+    -moz-transition: color 0.35s ease-in-out;
+    -webkit-transition: color 0.35s ease-in-out;
+    -o-transition: color 0.35s ease-in-out;
+    -ms-transition: color 0.35s ease-in-out;
+    transition: color 0.35s ease-in-out;
+}
+
+#banner a:hover{
+    background-color: var(--banner-btn-hover-bkgd-color);
+}
+
+
+/* Rooms Component */
+
+#rooms{
+    display: inline-block;
+    padding: 1rem;
+}
+
+.room-item{
+    margin: 0.5rem 0.75rem;
+    padding: 0.5rem;
+    width: 100%;
+    display: inline-block;
+    background: rgb(0,0,0,0.6);
+    border-radius: 10px;
+    color: var(--room-color);
+}
+
+.room-icon{
+    margin: 0.5rem auto 0;
+    text-align: center;
+    color: var(--room-icon-color);
+}
+
+a.tvIcon{
+    display: inline-block;
+    width: 50%;
+}
+
+div.room-icon-content{
+    -moz-transition: color 0.33s ease-in-out;
+    -webkit-transition: color 0.33s ease-in-out;
+    -o-transition: color 0.33s ease-in-out;
+    -ms-transition: color 0.33s ease-in-out;
+    transition: color 0.33s ease-in-out;
+}
+
+div.room-icon-content:hover{
+    color: var(--btn-hover);
+}
+
+.room-title{
+    margin-top: 0.25rem;
+    font-size: var(--room-title-size);
+    font-weight: var(--room-title-weight);
+    color: var(--title-color);
+}
+
+.room-desc{
+    font-size: var(--room-size);
+    color: var(--desc-color);
+}
+
+/* Team Component */
+
+#main{
+    margin-top: 3rem;
+    text-align: center;
+    margin: 0;
+    padding-top: 3rem;
+}
+
+section.team-member{
+    display: inline-block;
+    width: 30%;
+    margin: .5rem 1%;
+    background: rgb(0,0,0,0.4);
+}
+
+section.team-member h3{
+    margin-top: 0.75rem;
+    color: var(--member-title-color);
+}
+
+section.team-member p{
+    color: var(--member-desc-color);
+    margin: 0;
+    padding: 0.25rem;
+}
+
+#footer{
+    height: 200px;
+    margin-top: 50px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.85);
+
+}
+
+@media screen and (min-width: 400px) {
+    .room-item{
+        width: 33%;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    .room-item{
+        width: 25%;
+    }
+  }
