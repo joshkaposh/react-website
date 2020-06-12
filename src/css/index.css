@@ -1,0 +1,226 @@
+/* Pre Component Styling Setup */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,500&display=swap');
+body{
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code{
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/* navbar */
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+:root{
+  /* Mobile Variables */
+  --bg: #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --navBar-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms;
+/* Desktop Variables */
+  --logo-color: #fff;
+  --banner-color: #fff;
+  --banner-btn-bkgd-color: #d84780;
+  --room-icon-color: rgb(240, 240, 240);
+  --title-color: rgb(219, 219, 219);
+  --desc-color: rgb(173, 173, 173);
+  --member-title-color: rgb(230, 230, 230);
+  --member-desc-color: rgb(200, 200, 200);
+  --btn-hover: rgb(110, 219, 255);
+  --banner-btn-hover-bkgd-color: #f3659e;
+  --nav-size: 1.1rem;
+  --logo-size: 2rem;
+  --room-size: 1.1rem;
+  --room-title-size: 1.5rem;
+  --room-title-weight: 600;
+}
+
+
+#header{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* height: 112px; */
+  width: 100%;
+  background: #0F1116;
+  color: #fff;
+  padding: .5rem;
+  z-index: 100;
+  -moz-transition: top 0.6s;
+  -webkit-transition: top 0.6s;
+  -o-transition: top 0.6s;
+  -ms-transition: top 0.6s;
+  transition: top 0.6s;
+}
+
+
+
+/* Navigation */
+
+
+nav ul li a {
+  -moz-transition: color 0.35s ease-in-out;
+  -webkit-transition: color 0.35s ease-in-out;
+  -o-transition: color 0.35s ease-in-out;
+  -ms-transition: color 0.35s ease-in-out;
+  transition: color 0.35s ease-in-out;
+  display: inline-block;
+  color: #ddd;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+}
+
+
+/* Logo */
+
+.logo{
+  margin-right: auto;
+  list-style: none;
+}
+
+.logo h1 {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-size: var(--logo-size);
+  font-family: 'Cormorant', serif;
+}
+
+.logo h1 a{
+  display: inline-block;
+  color: var(--logo-color);
+}
+
+.logo h1 a:hover{
+  color: var(--btn-hover);
+}
+
+/* Desktop Navbar */
+
+nav.nav-desktop, .navbar{
+  width: 100%;
+}
+
+.navbar-item{
+  font-size:var(--nav-size);
+}
+
+/* Displays desktop as flex */
+nav.nav-desktop{display:flex}
+/* Displays tablet and  */
+nav.nav-tablet,nav.nav-mobile{display:none}
+nav ul li a:hover{color: var(--btn-hover)}
+
+
+
+
+a{
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.navbar-item{
+  margin-left: 1rem;
+}
+
+.navbar-mobile{
+  height: var(--navBar-size);
+  background-color: var(--bg);
+  padding: 0 1rem;
+  border-bottom: var(--border);
+}
+
+.nav-item{
+  width: calc(var(--navBar-size) * 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+
+.icon-button{
+  --button-size: calc(var(--navBar-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: #484a4d;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+
+
+
+.dropdown{
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.menu-item{
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+}
+
+.menu-item:hover{
+  background-color: #3b3b41;
+}
+.icon-button:hover{filter: brightness(1.2)}
+.icon-right{margin-left: auto}
+.icon-right:hover{filter: brightness(1.2)}
+.icon-left:hover{filter: brightness(1.2)}
+.icon-left{margin-right: 1rem}
+
+/* Navbar Media Queries */
+
+@media screen and (max-width: 700px) {
+  nav.nav-desktop{
+      display: none;
+  }
+
+  nav.nav-mobile{
+      display: flex;
+      width: 100%;
+  }
+
+}
+
+
+/* Room Media Queries */
+@media screen and (min-width: 400px) {
+  .room-item{
+      width: 33%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .room-item{
+      width: 25%;
+  }
+}

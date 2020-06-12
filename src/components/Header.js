@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 class Header extends Component {
     constructor(props){
@@ -12,50 +12,100 @@ class Header extends Component {
                 link3: "Download",
                 link4: "Contact Us",
             },
-            prevScrollpos: window.pageYOffset,
-            visible: true,
         };
     }
 
-    componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll);
-      }
-    
-      // Remove the event listener when the component is unmount.
-      componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleScroll);
-      }
-
-      handleScroll = () => {
-        const { prevScrollpos } = this.state;
-    
-        const currentScrollPos = window.pageYOffset;
-        const visible = prevScrollpos > currentScrollPos;
-    
-        this.setState({
-          prevScrollpos: currentScrollPos,
-          visible
-        });
-      };
 
     render() {
 
         return (
             <div id="header">
-                <div id="logo">
-                    <h1><a href="index.html">{this.state.logo}</a></h1>
-                </div>
-                <nav id="nav" >
-                    <ul>
-                        <li className="active"><a href="index.html">{this.state.links.link1}</a></li>
-                        <li><a href="training.html">{this.state.links.link2}</a></li>
-                        <li><a href="resources.html">{this.state.links.link3}</a></li>
-                        <li><a href="contact.html">{this.state.links.link4}</a></li>
+                <nav className="nav-desktop">
+                    <ul className="navbar">
+                        <li className="logo"><h1><a href="index.html">{this.state.logo}</a></h1></li>
+                        <li className="navbar-item"><a href="index.html">{this.state.links.link1}</a></li>
+                        <li className="navbar-item"><a href="training.html">{this.state.links.link2}</a></li>
+                        <li className="navbar-item"><a href="resources.html">{this.state.links.link3}</a></li>
+                        <li className="navbar-item"><a href="contact.html">{this.state.links.link4}</a></li>
                     </ul>
                 </nav>
+                <Navbar className="nav-tablet">
+                    <NavItem >
+                        <DropdownMenu>
+                        </DropdownMenu>
+                    </NavItem>
+                </Navbar>
+                <Navbar className="nav-mobile">
+                    <NavItem >
+                        <DropdownMenu >
+                            
+                        </DropdownMenu>
+                    </NavItem>
+                </Navbar>
             </div>
         );
     }
 }
+
+function DropdownMenu() {
+
+    function DropdownItem(props) {
+      return (
+        <a href="#" className="menu-item">
+          <span className="icon-button icon-left">{props.leftIcon}</span>
+  
+          {props.children}
+  
+          <span className="icon-button icon-right">{props.rightIcon}</span>
+        </a>
+      )
+    }
+  
+    return (
+      <div className="dropdown">
+        <DropdownItem
+          leftIcon="O"
+          rightIcon="X"
+          > link1
+        </DropdownItem>
+        <DropdownItem
+          leftIcon="O"
+          rightIcon="X"
+          > link2
+        </DropdownItem>
+        <DropdownItem
+          leftIcon="O"
+          rightIcon="X"
+          > link3
+        </DropdownItem>
+      </div>
+    )
+  }
+  
+  function Navbar(props) {
+    return (
+      <nav className={props.className}>
+            <ul className="navbar">
+                <li className="logo"><h1><a href="index.html">enCourage Family</a></h1></li>
+                { props.children }
+          </ul>
+      </nav>
+    )
+  }
+  
+  function NavItem(props) {
+  
+    const [open, setOpen] = useState(false);
+  
+    return (
+      <li className="nav-item">
+        <a href="#" className="icon-button" onClick={() => setOpen(!open)}>
+          {props.icon}
+        </a>
+  
+        {open && props.children}
+      </li>
+    );
+  }
  
 export default Header;
