@@ -1,0 +1,59 @@
+/* Rooms Component */
+:root{
+    --room-size: 1.1rem;
+    --room-title-size: 1.5rem;
+    --room-title-weight: 600;
+    --room-icon-color: rgb(240, 240, 240);
+    --title-color: rgb(219, 219, 219);
+    --desc-color: rgb(173, 173, 173);
+}
+
+#rooms{
+    display: flex;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+.room-item{
+    margin: 0.5rem 0.75rem;
+    padding: 0.5rem;
+    width: 100%;
+    background: rgb(0,0,0,0.8);
+    border-radius: 10px;
+    color: var(--room-color);
+}
+
+.room-icon{
+    margin: 0.5rem auto 0;
+    text-align: center;
+    color: var(--room-icon-color);
+}
+
+a.tvIcon{
+    display: inline-block;
+    width: 50%;
+}
+
+div.room-icon-content{
+    -moz-transition: color 0.33s ease-in-out;
+    -webkit-transition: color 0.33s ease-in-out;
+    -o-transition: color 0.33s ease-in-out;
+    -ms-transition: color 0.33s ease-in-out;
+    transition: color 0.33s ease-in-out;
+}
+
+div.room-icon-content:hover{
+    color: var(--btn-hover);
+}
+
+.room-title{
+    margin-top: 0.25rem;
+    font-size: var(--room-title-size);
+    font-weight: var(--room-title-weight);
+    color: var(--title-color);
+}
+
+.room-desc{
+    font-size: var(--room-size);
+    color: var(--desc-color);
+}
