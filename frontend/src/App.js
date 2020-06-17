@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router,
+import {
     Route,
     Switch 
 } from 'react-router-dom';
@@ -11,6 +11,15 @@ import Download from './components/routes/download.route';
 import ContactUs from './components/routes/contact-us.route';
 
 
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo'
+
+
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+});
+
+
 class App extends React.Component {
     state = {
 
@@ -18,27 +27,19 @@ class App extends React.Component {
     render() {
 
         return (
-            <div className="App">
+            <ApolloProvider client={client}>
+                <div className="App">
                     <Switch >
                         <Route path="/" component={Home} exact />
                         <Route path="/get-started" component={getStarted} />
                         <Route path="/docs" component={Docs} />
                         <Route path="/download" component={Download} />
                         <Route path="/contact-us" component={ContactUs} />
-                        {/* <Route component={<Error />} /> */}
                     </Switch>
-          </div>
+            </div>
+          </ApolloProvider>
         );
     }
 }
  
 export default App;
-
-{/* <Header />
-<hr />
-<Banner />
-<hr />
-<Rooms />
-<hr />
-<Team />
-<Footer /> */}

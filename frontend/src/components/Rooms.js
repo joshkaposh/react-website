@@ -1,8 +1,20 @@
 import React, { Component } from 'react';
+import { gql } from "apollo-boost";
+import { graphql } from 'react-apollo'
 // Packages needed to send Query to GraphQL
 
 import Room from "./Room"
 
+
+const getRoomsQuery = gql`
+{
+    rooms {
+        id
+        title
+        description
+    }
+}
+`
 
 
 class Rooms extends Component {
@@ -26,9 +38,15 @@ class Rooms extends Component {
         }
     }
 
+    componentDidMount() {
+        console.log(this.props);
+    }
+
+    componentDidUpdate() {
+        console.log(this.props);
+    }
 
     render() {
-
 
         const {numOfRooms, roomTitles, roomDescs} = this.state;
         const rooms = numOfRooms;
@@ -51,11 +69,9 @@ class Rooms extends Component {
         return ( 
             <div id="rooms">
                 {displayedRooms}
-
             </div> 
         );
     }
 }
 
-
-export default Rooms;
+export default graphql(getRoomsQuery)(Rooms);

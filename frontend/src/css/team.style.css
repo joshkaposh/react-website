@@ -1,11 +1,11 @@
 /* Team Component */
 #main{
+    margin-top: 70px;
     text-align: center;
     display: block;
-    margin-bottom: 150px;
 }
 
-section.team-member{
+/* section.team-member{
     display: inline-block;
     width: 30%;
     margin: .5rem 1%;
@@ -21,4 +21,69 @@ section.team-member p{
     color: var(--member-desc-color);
     margin: 0;
     padding: 0.25rem;
+} */
+
+/* Form */
+
+#contact-form{
+    background: rgb(0,0,0,0.4);
+    color: var(--member-title-color);
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 75%;
+}
+
+.form-field{
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+#contact-label{
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+#reasons{
+    font-size: 1.3rem;
+}
+
+/* Select box for contact form */
+#select-reason{
+    margin: 0 0 0 5px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+
+@media screen and (max-width: 815px) {
+    #select-reason{
+        margin: 0 auto;
+    }
+
+    #contact-form #message textarea{
+        width: 50%;
+    }
+
+  }
+
+
+
+#contact-form textarea{
+    border-radius: 3px;
+    min-width: 35%;
+}
+
+#contact-form #message{
+    margin-top: 10px;
+}
+
+
+#submit{
+    margin: 0.3rem 0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#submit:hover{
+    text-decoration: underline;
 }

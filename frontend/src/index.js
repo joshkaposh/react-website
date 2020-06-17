@@ -12,9 +12,12 @@ import './css/team.style.css'
 // CSS Styles
 
 // start of BACKEND *************************
-import { BrowserRouter} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+
 // end of BACKEND *************************
 
+
+// apollo client setup
 
 
 ReactDOM.render(

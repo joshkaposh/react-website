@@ -1,11 +1,27 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 
 class Team extends Component {
     state = {  }
     render() { 
         return (
             <div id="main">
-                <form id="">
+                <form id="contact-form">
+                    <label id="contact-label">Want to contact the team?</label>
+                    <div className="form-field">
+                        <label id="reasons">Reason:</label>
+                        <select id="select-reason"name="reasons">
+                            <option value="bug">subscription</option>
+                            <option value="connection">purchase conference room</option>
+                            <option value="sales">sales & marketing</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                    <div id="message">
+                        <textarea placeholder="message"/>
+                    </div>
+                    <div>
+                        <button id="submit">submit</button>
+                    </div>
 
                 </form>
             </div>
