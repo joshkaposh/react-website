@@ -43,23 +43,6 @@ a:hover{
 }
 
 
-/* Navigation */
-
-/* Desktop Navbar */
-
-nav.nav-desktop, .navbar{
-  width: 100%;
-}
-
-.navbar-item{
-  font-size:var(--nav-size);
-}
-
-/* Displays desktop as flex */
-nav.nav-desktop{display:flex}
-/* Displays tablet and  */
-nav.nav-tablet,nav.nav-mobile{display:none}
-nav ul li a:hover{color: var(--btn-hover)}
 
 
 
@@ -147,18 +130,4 @@ a{
       width: 100%;
   }
 
-}
-
-
-/* Room Media Queries */
-@media screen and (min-width: 400px) {
-  .room-item{
-      width: 33%;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .room-item{
-      width: 25%;
-  }
 }

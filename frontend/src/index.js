@@ -7,6 +7,8 @@ import './css/index.css';
 import './css/navbar.style.css';
 import './css/rooms.style.css';
 import './css/banner.style.css';
+import './css/footer.style.css'
+import './css/team.style.css'
 // CSS Styles
 
 // start of BACKEND *************************

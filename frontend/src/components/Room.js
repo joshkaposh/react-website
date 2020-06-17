@@ -1,7 +1,5 @@
 
 import React, { Component } from 'react';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faTv } from "@fortawesome/free-solid-svg-icons";
 
 
 class Room extends Component {
@@ -11,7 +9,7 @@ class Room extends Component {
                 <div className="room-icon">
                     <a className="tvIcon" href="https://encouragefamily.com/" target="_blank" rel="noopener noreferrer">
                         <div className="room-icon">
-                            <div className="room-icon-content">{/* <FontAwesomeIcon icon={faTv} size="5x" /> */}</div>
+                            {/* <div className="room-icon-content"><FontAwesomeIcon icon={faTv} size="5x" /></div> */}
                         </div>
                     </a>
                 </div>

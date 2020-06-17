@@ -1,5 +1,20 @@
-import ApolloClient from 'apollo-boost';
+import ApolloClient, { gql } from 'apollo-boost';
 
-export default new ApolloClient({
+const client = new ApolloClient({
   uri: "http://localhost:4000/graphql",
 });
+
+client.query({
+  query: gql`
+  {
+    rooms {
+      id
+      title
+      desc
+    }
+  }
+  `
+})
+.then(result => console.log(result.data));
+
+export default client;

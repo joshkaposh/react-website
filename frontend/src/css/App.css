@@ -1,9 +1,13 @@
-#root{
+body{
     background: url(../images/bg.jpg) no-repeat center top;
     background-size: cover;
     background-attachment: fixed;
     -webkit-backface-visibility: hidden;
     text-align: center;
+}
+
+#root{
+
     padding-top: 10px;
 }
 
@@ -46,93 +50,3 @@ a:hover{
 #banner a:hover{
     background-color: var(--banner-btn-hover-bkgd-color);
 }
-
-
-/* Rooms Component */
-
-#rooms{
-    display: inline-block;
-    padding: 1rem;
-}
-
-.room-item{
-    margin: 0.5rem 0.75rem;
-    padding: 0.5rem;
-    width: 100%;
-    display: inline-block;
-    background: rgb(0,0,0,0.6);
-    border-radius: 10px;
-    color: var(--room-color);
-}
-
-.room-icon{
-    margin: 0.5rem auto 0;
-    text-align: center;
-    color: var(--room-icon-color);
-}
-
-a.tvIcon{
-    display: inline-block;
-    width: 50%;
-}
-
-div.room-icon-content{
-    -moz-transition: color 0.33s ease-in-out;
-    -webkit-transition: color 0.33s ease-in-out;
-    -o-transition: color 0.33s ease-in-out;
-    -ms-transition: color 0.33s ease-in-out;
-    transition: color 0.33s ease-in-out;
-}
-
-div.room-icon-content:hover{
-    color: var(--btn-hover);
-}
-
-.room-title{
-    margin-top: 0.25rem;
-    font-size: var(--room-title-size);
-    font-weight: var(--room-title-weight);
-    color: var(--title-color);
-}
-
-.room-desc{
-    font-size: var(--room-size);
-    color: var(--desc-color);
-}
-
-/* Team Component */
-
-#main{
-    margin-top: 3rem;
-    text-align: center;
-    margin: 0;
-    padding-top: 3rem;
-}
-
-section.team-member{
-    display: inline-block;
-    width: 30%;
-    margin: .5rem 1%;
-    background: rgb(0,0,0,0.4);
-}
-
-section.team-member h3{
-    margin-top: 0.75rem;
-    color: var(--member-title-color);
-}
-
-section.team-member p{
-    color: var(--member-desc-color);
-    margin: 0;
-    padding: 0.25rem;
-}
-
-#footer{
-    height: 200px;
-    margin-top: 50px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.85);
-
-}
-
-

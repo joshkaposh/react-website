@@ -7,7 +7,7 @@ class Footer extends Component {
     render() { 
         return (
             <footer id="footer">
-                <span >Place Sticky footer content here.</span>
+                <span >&copy; enCourage Family 2020</span>
             </footer>
         );
     }

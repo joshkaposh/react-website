@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+// Packages needed to send Query to GraphQL
+
 import Room from "./Room"
+
+
+
 class Rooms extends Component {
 
     constructor(props) {
@@ -23,6 +28,7 @@ class Rooms extends Component {
 
 
     render() {
+
 
         const {numOfRooms, roomTitles, roomDescs} = this.state;
         const rooms = numOfRooms;
@@ -50,5 +56,6 @@ class Rooms extends Component {
         );
     }
 }
- 
+
+
 export default Rooms;
