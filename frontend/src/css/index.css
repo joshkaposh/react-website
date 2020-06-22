@@ -120,14 +120,3 @@ a{
 
 /* Navbar Media Queries */
 
-@media screen and (max-width: 700px) {
-  nav.nav-desktop{
-      display: none;
-  }
-
-  nav.nav-mobile{
-      display: flex;
-      width: 100%;
-  }
-
-}

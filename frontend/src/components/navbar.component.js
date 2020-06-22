@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+
 class Navbar extends Component {
-    state = {  }
+
     render() { 
         return (
             <header id="header">
@@ -19,5 +20,5 @@ class Navbar extends Component {
         );
     }
 }
- 
+
 export default Navbar;

@@ -9,40 +9,73 @@
 }
 
 
+/* NEED TO DO
+
+    Either use react-bootstrap, or find a css gird-like library
+
+*/
+
+
 /* Room Media Queries */
-@media screen and (min-width: 400px) {
-    #rooms{
-        max-width: 100%;
-    }
+
+/* Mobile */
+@media screen and (max-width: 450px) {
+
+
+
     .room-item{
-        max-width: 33%;
+        width: 75%;
     }
-  }
-  
-  @media screen and (min-width: 600px) {
+
+}
+
+
+/* Tablet */
+@media screen and (min-width: 450px) {
+
+
+
+    .room-item{
+        width: 33%;
+        min-height: 100px;
+        max-height: 100px;
+
+    }
+
+}
+
+/* Desktop */
+@media screen and (min-width: 600px) {
+
+
     .room-item{
         width: 25%;
+        min-height: 150px;
+        max-height: 150px;
+
     }
-  }
 
+    #6{
+        margin-top: 3rem;
+    }
 
-#rooms{
-    display: inline-block;
-    padding: 1rem;
-    max-width: 75%;
 }
+
+
+
 
 /* Rooms Component */
 
 #rooms{
-    display: inline-block;
+    display: block;
+    flex-direction: row;
     padding: 1rem;
+    width: 100%;
 }
 
 .room-item{
     margin: 0.5rem 0.75rem;
     padding: 0.5rem;
-    width: 100%;
     display: inline-block;
     background: rgb(0,0,0,0.6);
     border-radius: 10px;
@@ -77,6 +110,11 @@ div.room-icon-content:hover{
     font-size: var(--room-title-size);
     font-weight: var(--room-title-weight);
     color: var(--title-color);
+}
+
+.room-title:hover{
+    color: var(--btn-hover);
+
 }
 
 .room-desc{

@@ -1,55 +1,64 @@
 const express = require('express');
+const cors = require('cors');
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
-const cors = require('cors')
+const PORT = process.env.PORT || 4000;
 
+const mongoose = require('mongoose');
 
-// Construct a schema, using GraphQL schema language
-const schema = buildSchema(`
-  type Query {
+mongoose.connect('mongodb://localhost:27017/main',
+    { useNewUrlParser: true, useUnifiedTopology: true}
+)
+
+// Mongoose Schema
+let roomSchema = new mongoose.Schema({
+    title: String,
+    description: String
+})
+
+let roomModel = mongoose.model('Room', roomSchema)
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function() {
+    console.log('Successfully connected to MongoDB!')
+
+}) 
+
+const app = express();
+app.use(cors());
+
+// GraphQL Schema
+const typeDefs = buildSchema(`
+    type Query {
     hello: String
     rooms: [Room!]
   }
-
   type Room {
-      id: Int
-      title: String
-      description: String
+    id: ID!
+    title: String
+    description: String
   }
 
 `);
-
-
-
-const ROOMS = [
-    {id: 1, title: 't1', description: 'd1'},
-    {id: 2, title: 't2', description: 'd2'},
-    {id: 3, title: 't3', description: 'd3'},
-    {id: 4, title: 't4', description: 'd4'},
-    {id: 5, title: 't5', description: 'd5'},
-    {id: 6, title: 't6', description: 'd6'},
-
-]
-
-// The root provides a resolver function for each API endpoint
+// GraphQL Root Resolver functions
 const root = {
-  hello: () => {
-    return 'Hello world!';
-  },
-  rooms: () => ROOMS,
+    hello: () => {
+      return 'Hello World';
+    },
+    rooms: async function() {
+        const documents = await roomModel.find()
+        return documents;
+    }
+
 };
 
-// Middleware
-const app = express();
-
-app.use(cors());
-
-
-
 app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: root,
-  graphiql: true,
-}));
-app.listen(4000);
-console.log('Running a GraphQL API server at http://localhost:4000/graphql');
+    schema: typeDefs,
+    rootValue: root,
+    graphiql: true,
+  }));
+
+app.listen(PORT, () => {
+    console.log(`Running a GraphQL API server at http://localhost:${PORT}/graphql`);
+})
