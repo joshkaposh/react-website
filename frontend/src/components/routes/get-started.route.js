@@ -1,22 +1,19 @@
 import React, { Component } from 'react'; 
 import Navbar from '../navbar.component';
-import Banner from '../Banner';
-import Rooms from '../Rooms';
-import Team from '../Team';
 import Footer from '../Footer'
+import '../../css/get-started.style.css'
 
 class getStarted extends Component {
-    state = {  }
     render() { 
         return (
             <React.Fragment>
                 <Navbar />
-                <div id="content">
-                    <Banner />
-                    <Rooms />
-                    <Team />
-                    <Footer />
+                <div id="content" className="bg-null">
+                    <h2>
+                        Get Started with enCourage Family
+                    </h2>
                 </div>
+                <Footer />
             </React.Fragment>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../navbar.component'
-import Rooms from '../Rooms'
-
+import Banner from '../Banner'
+import Footer from '../Footer'
 
 class Home extends Component {
     state = {  }
@@ -10,8 +10,9 @@ class Home extends Component {
             <React.Fragment>
                 <Navbar />
                 <div id="content">
-                    <Rooms />
+                    <Banner />
                 </div>
+                <Footer />
             </React.Fragment>
         );
     }

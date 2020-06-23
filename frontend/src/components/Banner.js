@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import ReadMore from './routes/read-more.route'
 
 class Banner extends Component {
     render() { 
@@ -11,10 +8,8 @@ class Banner extends Component {
                     <p>This is <strong>enCourage Family</strong>, a platform that enforces safe and secure communication for families going through separation and divorce.</p>
                 </div>
                 <div className="banner-btn">
-                    <Link to="/read-more" component={ReadMore} />
+                    <a href='#read-more'>Read More</a>
                 </div>
-    
-                <div id="read-more"></div>
             </div>
         );
     }

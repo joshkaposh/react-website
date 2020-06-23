@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import Navbar from '../navbar.component'
 
-class ReadMore extends Component {
+class Readmore extends Component {
     state = {  }
     render() { 
         return (
-            <a href="#read-more">Read More</a>
+            <React.Fragment>
+                <Navbar />
+                <div id="content">
+                    Hi
+                </div>
+            </React.Fragment>
         );
     }
 }
- 
-export default ReadMore;
+export default Readmore;

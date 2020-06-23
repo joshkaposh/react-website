@@ -3,7 +3,6 @@ import { gql } from "apollo-boost";
 import { graphql } from 'react-apollo'
 // Packages needed to send Query to GraphQL
 
-import Room from "./Room"
 
 
 const getRoomsQuery = gql`
@@ -18,10 +17,6 @@ const getRoomsQuery = gql`
 
 
 class Rooms extends Component {
-
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         console.log(this.props);
@@ -44,14 +39,13 @@ class Rooms extends Component {
                         id={room.id}
                         className='room-item'
                     >
-                        <div className='room-title'><a className={room.title}>{room.title}</a></div>
-                        <div className='room-desc'><a className={room.description}>{room.description}</a></div>
+                        <div className='room-title'><p>{room.title}</p></div>
+                        <div className='room-desc'><p>{room.description}</p></div>
                     </div>
                 )
             })
         }
     }
-
 
     render() {
 
@@ -64,13 +58,3 @@ class Rooms extends Component {
 }
 
 export default graphql(getRoomsQuery)(Rooms);
-
-// db.rooms.insertMany([
-//     {title: "Family", description: "Daily Call"},
-//     {title: "Online School", description: "AGR 801"},
-//     {title: "Highschool Reunion", description: "See Your Old Friends!"},
-//     {title: "Friends", description: "Group Chat"},
-//     {title: "Incoming Call", description: "Fred Fernandez"},
-//     {title: "Prayer Group", description: "Weekly Call"}
-// ])
-    
