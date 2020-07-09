@@ -4,12 +4,12 @@ import {
     Switch 
 } from 'react-router-dom';
 // Routes
-import Home from './components/routes/home.route';
+import Rooms from './components/Rooms';
 import getStarted from './components/routes/get-started.route'
 import Docs from './components/routes/docs.route';
 import Download from './components/routes/download.route';
 import ContactUs from './components/routes/contact-us.route';
-
+import EditRoom from './components/room-controls/EditRoom';
 
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo'
@@ -30,11 +30,12 @@ class App extends React.Component {
             <ApolloProvider client={client}>
                 <div className="App">
                     <Switch >
-                        <Route path="/" component={Home} exact />
-                        <Route path="/get-started" component={getStarted} />
+                        <Route path="/" component={getStarted} exact />
+                        <Route path="/rooms" component={Rooms} />
                         <Route path="/docs" component={Docs} />
                         <Route path="/download" component={Download} />
                         <Route path="/contact-us" component={ContactUs} />
+                        <Route path="/edit-room" component={EditRoom} />
                     </Switch>
             </div>
           </ApolloProvider>

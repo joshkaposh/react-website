@@ -1,76 +1,106 @@
 import React, { Component } from 'react';
+import Navbar from './navbar.component'
+import Room from './Room';
 import { gql } from "apollo-boost";
-import { graphql } from 'react-apollo'
+import { graphql } from 'react-apollo';
 // Packages needed to send Query to GraphQL
 
-import Room from "./Room"
-
-
-const getRoomsQuery = gql`
+const GET_USERS_QUERY = gql`
 {
-    rooms {
-        id
-        title
-        description
-    }
+  users{
+    id
+    name
+    password
+    group
+    role
+
+  }
 }
 `
 
-
 class Rooms extends Component {
-
     constructor(props) {
-        super(props)
+        super(props);
+        this.state = {
+            username: '',
+            user: {}
+        }
+        this.displayUsers = this.displayUsers.bind(this);
+        this.changeUser = this.changeUser.bind(this);
     }
 
-    componentDidMount() {
-        console.log(this.props);
+    changeUser(e) {
+        this.setState({username: e.target.value})
+        const newUser = this.props.data.users.filter(user => {
+            return user.name === e.target.value;
+        })
+        this.setState({user: newUser[0]})
     }
 
-    componentDidUpdate() {
-        console.log(this.props);
+    displayUsers() {
+        var data = this.props.data;
+        if(data.loading) {
+            return <option>Loading Users...</option>
+        }
+        else {
+            return (
+                    data.users.map(user => {
+                        return (
+                        <option
+                            key={user.id}
+                            name={user.name}
+                            group={user.group}
+                            role={user.role}
+                        >
+                            {user.name}
+                        </option>
+                        )
+                    })
+            )
+        }
     }
 
     displayRooms() {
-        var data = this.props.data;
-        if(data.loading) {
-            return <div>Loading rooms...</div>
-        }
-        else {
-            return data.rooms.map(room => {
-                return (
-                    <div
-                        key={room.id}
-                        id={room.id}
-                        className='room-item'
-                    >
-                        <div className='room-title'><a className={room.title}>{room.title}</a></div>
-                        <div className='room-desc'><a className={room.description}>{room.description}</a></div>
-                    </div>
-                )
-            })
+        const user = this.state.user;
+
+        if(user.id === undefined) {
+            return
+        } else
+        if(user.role === 'admin') {
+             return <div className="admin-view">
+                <Room role={user.role} group={user.group}/>
+         </div>
+        } else
+        if(user.role === 'basic') {
+            return <div className="basic-view">
+                <Room role={user.role} group={user.group} />
+            </div>
         }
     }
 
 
-    render() {
 
-        return ( 
-            <div id="rooms">
-                { this.displayRooms() }
-            </div> 
+    render() {
+        console.log(this.state.user);
+        
+        return (
+            <React.Fragment>
+                <Navbar />
+                <div id="content">
+                    <div className="sign-in">
+                        <label>Login as:</label>
+                        <select onChange={this.changeUser}>
+                            {this.displayUsers()}
+                        </select>
+                    </div>
+                    <div id="rooms">
+                        <h2>Rooms</h2>
+                        {this.displayRooms()}
+                    </div>
+                </div>
+            </React.Fragment>
         );
     }
 }
 
-export default graphql(getRoomsQuery)(Rooms);
-
-// db.rooms.insertMany([
-//     {title: "Family", description: "Daily Call"},
-//     {title: "Online School", description: "AGR 801"},
-//     {title: "Highschool Reunion", description: "See Your Old Friends!"},
-//     {title: "Friends", description: "Group Chat"},
-//     {title: "Incoming Call", description: "Fred Fernandez"},
-//     {title: "Prayer Group", description: "Weekly Call"}
-// ])
-    
+export default graphql(GET_USERS_QUERY)(Rooms);

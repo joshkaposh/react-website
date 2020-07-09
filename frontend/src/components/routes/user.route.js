@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../navbar.component'
-
-
-import Footer from '../Footer';
-import Login from '../login.component'
-import { Link } from 'react-router-dom';
+import User from '../User.component'
 
 
 class Home extends Component {
@@ -13,10 +9,9 @@ class Home extends Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <div id="main">
-                    <Login />
+                <div id="content">
+                    <User />
                 </div>
-                <Footer />
             </React.Fragment>
         );
     }

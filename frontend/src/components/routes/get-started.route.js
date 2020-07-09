@@ -1,9 +1,10 @@
 import React, { Component } from 'react'; 
 import Navbar from '../navbar.component';
-import Banner from '../Banner';
-import Rooms from '../Rooms';
-import Team from '../Team';
 import Footer from '../Footer'
+import Banner from '../Banner';
+
+
+
 
 class getStarted extends Component {
     state = {  }
@@ -11,12 +12,10 @@ class getStarted extends Component {
         return (
             <React.Fragment>
                 <Navbar />
-                <div id="content">
+                <section>
                     <Banner />
-                    <Rooms />
-                    <Team />
-                    <Footer />
-                </div>
+                </section>
+                <Footer />
             </React.Fragment>
         );
     }

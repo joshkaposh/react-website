@@ -9,6 +9,7 @@ import './css/rooms.style.css';
 import './css/banner.style.css';
 import './css/footer.style.css'
 import './css/team.style.css'
+import './css/user-authentication.style.css'
 // CSS Styles
 
 // start of BACKEND *************************
