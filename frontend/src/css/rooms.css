@@ -1,0 +1,77 @@
+.rooms {
+    width: 100%;
+    height: auto;
+
+}
+.room label{
+    margin-right: 5px;
+}
+.room{
+    position: relative;
+    height: auto;
+    width: calc(50% - 10px);
+    float: left;
+    margin: 10px 0;
+
+}
+
+.room-section{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.room-content{
+    display: inline-block;
+    position: relative;
+    padding: 5px 0;
+    width: 100%;
+    height: auto;
+}
+
+.room-admin-controls{
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.room-owner{
+    margin-bottom: 40px;
+}
+
+.room-admin-controls a{
+    position: absolute;
+    bottom: 0px;
+    padding: 10px 0;
+    width: 50%;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+
+}
+
+.room-edit{
+    left: 0;
+    border-radius: 0 0 0 10px;
+    background-color: rgb(65, 122, 246);
+}
+
+.room-edit:hover{
+    background-color: rgb(42, 106, 243);
+}
+
+.room-delete{
+    right: 0;
+    border-radius: 0 0 10px 0;
+    background-color: rgb(243, 35, 77);
+}
+
+.room-delete:hover{
+    background-color: crimson;
+}
+
+

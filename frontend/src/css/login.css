@@ -1,0 +1,23 @@
+.user div label{
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.user h1{
+    margin: 5px 0;
+    padding: 0;
+}
+
+.user hr{
+    margin-top: -2.5px;
+    border-top: 0.5px solid black;
+    width: 40%;
+}
+
+.user{
+    background-color: rgb(218, 235, 250);
+    padding: 15px;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 6px;
+}

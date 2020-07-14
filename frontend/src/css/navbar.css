@@ -1,0 +1,65 @@
+body{
+    overflow-x: hidden;
+}
+
+:root{
+    --nav-color: rgb(93, 50, 211);
+}
+
+a{text-decoration: none}
+
+#header{
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    text-align: center;
+    box-shadow: 10px 1px rgb(104, 57, 233);
+    z-index: 100;
+    background: white;
+}
+
+#content{
+    margin-top: 70px;
+    padding-top: 2.5rem;
+}
+
+#header nav{
+    display: inline-block;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    justify-content: flex-end;
+    padding-inline-start: 0;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar-item a,.logo a{
+    color: var(--nav-color);
+}
+
+.navbar li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.logo{
+    display: inline-block;
+    padding: 0;
+    margin-right: auto;
+    margin: 0 auto 0 10px;
+}
+
+/*
+    <nav className="nav-desktop">
+    <ul className="navbar">
+    <li className="logo"><h1><Link to="/">enCourage Family</Link></h1></li>
+    <li className="navbar-item"><Link to="/login">Login</Link></li>
+    <li className="navbar-item"><Link to="/manage">Manage</Link></li>
+*/
