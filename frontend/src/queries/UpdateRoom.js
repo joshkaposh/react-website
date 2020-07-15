@@ -14,7 +14,6 @@ const UPDATE_ROOM = gql`
   }
 `;
 
-
 function UpdateRoom(id) {
     const { roomID } = id;
     const [updateRoom, { data }] = useMutation(UPDATE_ROOM);
@@ -26,6 +25,10 @@ function UpdateRoom(id) {
         owner: ''
       })
 
+    const refreshPage = () => {
+        window.location.reload(false)
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         updateRoom({ variables: {
@@ -34,6 +37,7 @@ function UpdateRoom(id) {
             description: state.description,
             group: state.group,
             owner: state.owner}});
+            refreshPage()
     }
 
     function handleChange(e) {
@@ -75,7 +79,7 @@ function UpdateRoom(id) {
                     onChange={handleChange}
                 />
             </div>
-            <div className="room-content room-owner">
+            <div className="room-content room-owner" style={{marginBottom: 0}}>
                 <label>Owner:</label>
                 <input
                     type="text"
@@ -83,8 +87,8 @@ function UpdateRoom(id) {
                     value={state.owner}
                     onChange={handleChange}                />
             </div>
-            <div className="room-content room-connect">
-                <input type="submit" value="Update"/>
+            <div className="room-content">
+                <input type="submit" value="Save"/>
             </div>
         </form>
 

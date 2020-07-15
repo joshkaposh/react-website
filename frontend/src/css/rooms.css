@@ -7,7 +7,7 @@
     margin-right: 5px;
 }
 .room{
-    position: relative;
+    /* position: relative; */
     height: auto;
     width: calc(50% - 10px);
     float: left;
@@ -16,9 +16,10 @@
 }
 
 .room-section{
+    position: relative;
     width: 80%;
     margin: 0 auto;
-    padding: 10px 0 0 0;
+    padding: 20px 0 0 0;
     border-radius: 10px;
     background-color: #fff;
 }
@@ -38,40 +39,89 @@
     height: auto;
 }
 
+
+
 .room-owner{
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
+
+.room-image div{
+    background-color: grey;
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+}
+
+.room-image div:hover{
+    cursor: pointer;
+}
+
+.room-images{
+    display: none;
+    background-color: 'blue';
+    height: '100px';
+    width: '100px'
+}
+
 
 .room-admin-controls a{
     position: absolute;
     bottom: 0px;
-    padding: 10px 0;
+    padding: 5px 0;
     width: 50%;
     font-size: 0.8rem;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif;
     color: #fff;
+}
 
+.room-basic-controls{
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.room-basic-controls a{
+    position: absolute;
+    bottom: 0px;
+    padding: 5px 0;
+    width: 100%;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
 }
 
 .room-edit{
-    left: 0;
-    border-radius: 0 0 0 10px;
-    background-color: rgb(65, 122, 246);
+    position: absolute;
+    top: 1px;
+    right: 5px;
 }
 
-.room-edit:hover{
-    background-color: rgb(42, 106, 243);
-}
+.room-edit:hover{text-decoration: underline}
 
 .room-delete{
     right: 0;
     border-radius: 0 0 10px 0;
-    background-color: rgb(243, 35, 77);
+    background-color: rgb(206, 32, 66);
+
 }
 
 .room-delete:hover{
-    background-color: crimson;
+    background-color: rgb(224, 39, 76);
+    z-index: 1;
+}
+
+.room-connect{
+    left: 0;
+    background-color: rgb(59, 202, 59);
+    border-radius: 0 0 0 10px;
+}
+
+.room-connect:hover{
+    background-color: rgb(74, 221, 74);
+    z-index: 1;
 }
 
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -16,12 +16,13 @@ const GET_ROOM_BY_ID = gql`
 function GetRoom(id) {
     const { roomID } = id;
 
+
     const { loading, error, data } = useQuery(GET_ROOM_BY_ID, {
         variables: { id: roomID },
     });
         if (loading) return <p>Loading ...</p>;
         if(error) return <p>Error</p>
-        
+
       return (
           <div className='room-section' style={{backgroundColor: 'rgb(200, 200, 200)', width: '45%', borderRadius: '6px'}}>
             <div className='room-content'>
